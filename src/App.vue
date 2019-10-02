@@ -8,6 +8,7 @@
 <script>
 import LeftColumn from "./components/LeftColumn.vue";
 import ContentBox from "@/components/ContentBox.vue";
+
 export default {
   name: "app",
   components: {
