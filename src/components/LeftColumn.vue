@@ -2,14 +2,14 @@
   <div class="leftColumn">
     <div class="wrapper">
       <img class="logo" src="../assets/logo.svg" />
-      <input class="searchbar" placeholder="Search" type="text" />
+      <input class="searchbar" v-model="search" placeholder="Search" type="text" />
     </div>
     <ul>
       <transition-group name="list" enter-active-class="animated fadeInLeft">
         <li
           v-bind:class="index === indexComponent ? 'active' : ''"
           @click="setActive(indexComponent)"
-          v-for="(component, indexComponent) in components"
+          v-for="(component, indexComponent) in filteredComponents"
           :key="component.id"
         >{{component.title}}</li>
       </transition-group>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 export default {
   name: "LeftColumn",
   props: {
@@ -57,8 +58,23 @@ export default {
         { id: 28, title: "Rest" }
       ],
 
-      index: 0
+      index: 0,
+      search: ''
+
+     
     };
+  },
+
+  computed: {
+
+    filteredComponents: function(){
+      return this.components.filter((component) => {
+
+          return component.title.match(this.search);
+
+      }) 
+    }
+
   },
 
   methods: {

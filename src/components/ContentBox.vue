@@ -1,27 +1,6 @@
 <template >
         <div class="content">
-<!-- 
-            <div class="navigationBar">
-                <div id="imageHolder">
-                    <img id="logo" src="../assets/openremote-logo.png">
-                </div>
-                <ul class="menu">
-                    <li class="menuItemHeaderFirst"><h2>Introduction</h2></li>
-                    <li class="menuItem">Getting started</li>
-                    <li class="menuItem">Setting up your workspace</li>
-                    <li class="menuItemHeader"><h2>UI Components</h2></li>
-                    <li class="menuItem">or-assets-tree</li>
-                    <li class="menuItem">or-assets-viewer</li>
-                    <li class="menuItem">or-attribute-input</li>
-                    <li class="menuItem">or-bottom-navigations</li>
-                    <li class="menuItem">or-header</li>
-                    <li class="menuItem">or-icon</li>
-                    <li class="menuItem">or-input</li>
-                    <li class="menuItem">or-map</li>
-                </ul>
-            </div>
 
-            -->
 
             <div class="contentBox" @scroll="scrollBar()">
 
