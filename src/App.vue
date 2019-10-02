@@ -1,22 +1,26 @@
 <template>
   <div id="app">
     <LeftColumn />
+    <ContentBox />
   </div>
 </template>
 
 <script>
 import LeftColumn from "./components/LeftColumn.vue";
+import ContentBox from "@/components/ContentBox.vue";
 export default {
-  name: "left",
+  name: "app",
   components: {
-    LeftColumn
-  },
+    LeftColumn,
+    ContentBox
+  }
 };
 </script>
 
 
-
 <style>
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
 
 body{
   margin: 0;
@@ -24,6 +28,7 @@ body{
   position: fixed;
   overflow: hidden;
 }
+
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -35,12 +40,10 @@ body{
 
 }
 
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
 #nav a.router-link-exact-active {
   color: #42b983;
 }

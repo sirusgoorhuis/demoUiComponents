@@ -58,11 +58,14 @@ export default {
 @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
 
 .leftColumn {
-  width: 25%;
+  
+  width: 25vw;
   height: 100vh;
   background-color: #1c1c1c;
   box-shadow: 7px 0 30px 0 rgba(0, 0, 0, 0.5);
-  position: fixed;
+  float: left;
+  position: relative;
+  z-index: 10;
 }
 
 ul {

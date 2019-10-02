@@ -1,8 +1,10 @@
 <template>
 
   
-   <LeftColumn />
-  
+  <div class="home">
+
+  </div>
+
 </template>
 
 <script>
