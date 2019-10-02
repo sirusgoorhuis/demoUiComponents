@@ -1,7 +1,5 @@
-<template>
-        <div class="content" @scroll="scrollBarr">
-
-
+<template >
+        <div class="content">
 <!-- 
             <div class="navigationBar">
                 <div id="imageHolder">
@@ -25,7 +23,7 @@
 
             -->
 
-            <div class="contentBox">
+            <div class="contentBox" @scroll="scrollBar()">
 
                 <div class="item">
                     <h1 class="title">@openremote/or-asset-tree</h1>
@@ -69,12 +67,24 @@ export default {
     name: 'ContentBox',
     methods: {
         scrollBar() {
-            console.log("bibbasmekaas");
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrollCheck = document.getElementsByClassName('contentBox');
+            var winScroll = scrollCheck[0].scrollTop || document.documentElement.scrollTop;
+            var height = scrollCheck[0].scrollHeight - scrollCheck[0].clientHeight;
             var scrolled = (winScroll / height) * 100;
-            document.getElementById("bar").style.width = scrolled + "%";
+            document.getElementById("bar").style.height = scrolled + "%";
+        },
+        created () {
+            window.addEventListener('scroll', this.scrollBar);
+        },
+         mounted() {
+            window.addEventListener('scroll', this.scrollBar);
+        },
+        destroyed () {
+            window.removeEventListener('scroll', this.scrollBar);
         }
+    },
+    data: {
+        
     }
 }
 </script>
@@ -98,7 +108,6 @@ export default {
         z-index: 0;
         position: relative;
     }
-    
     .navigationBar {
         margin: 0;
         padding: 0;
@@ -124,18 +133,19 @@ export default {
         float: left;
         background-color: #1f2224;
     }
-    .progressBar {
-        width: 0.5vw;
-        margin-left: 2.75vw;
-        margin-top: 5vh;
+    .progressContainer {
+        width: 0.3vw;
         height: 90vh;
         background-color: #519d36;
-        position: relative;
+        margin-left: 2.85vw;
     }
-    .progressContainer {
-        width: inherit;
+    .progressBar {
+        width: 0.3vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
         height: 0%;
         background-color: #c4d42c;
+        position: relative;
     }
     .item {
         width: auto;
