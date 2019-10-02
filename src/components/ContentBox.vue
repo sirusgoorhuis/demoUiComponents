@@ -63,7 +63,7 @@ export default {
         }
     },
     data: {
-        
+
     }
 }
 </script>
@@ -123,6 +123,7 @@ export default {
         margin-top: 5vh;
         margin-bottom: 5vh;
         height: 0%;
+        max-height: 90vh;
         background-color: #c4d42c;
         position: relative;
     }
