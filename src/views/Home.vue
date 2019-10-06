@@ -1,20 +1,16 @@
 <template>
-
-  
   <div class="home">
-
+    <img alt="Vue logo" src="../assets/logo.png">
   </div>
-
 </template>
 
-<script>
-// @ is an alias to /src
-import LeftColumn from '@/components/LeftColumn.vue';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'LeftColumn',
+@Component({
   components: {
-    LeftColumn,
+
   },
-};
+})
+export default class Home extends Vue {}
 </script>

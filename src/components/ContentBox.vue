@@ -1,4 +1,5 @@
-<template >
+@Component({
+    template: '<template >
         <div class="content">
 <!-- 
             <div class="navigationBar">
@@ -60,7 +61,9 @@
                 </div>
             </div>
         </div>
-</template>
+</template>'
+})
+
 
 <script>
 export default {

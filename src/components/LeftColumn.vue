@@ -1,9 +1,11 @@
-<template>
-  <div class="leftColumn">
-    <div class="wrapper">
-      <img class="logo" src="../assets/logo.svg" />
-      <input class="searchbar" placeholder="Search" type="text" />
-    </div>
+@Component({
+  template: '
+  <template>
+    <div class="leftColumn">
+      <div class="wrapper">
+        <img class="logo" src="../assets/logo.svg" />
+        <input class="searchbar" placeholder="Search" type="text" />
+      </div>
     <ul>
       <transition-group name="list" enter-active-class="animated fadeInLeft">
         <li
@@ -15,7 +17,8 @@
       </transition-group>
     </ul>
   </div>
-</template>
+</template>'
+})
 
 <script>
 export default {

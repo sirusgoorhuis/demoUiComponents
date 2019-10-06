@@ -1,9 +1,13 @@
-<template>
-  <div id="app">
-    <LeftColumn />
-    <ContentBox />
-  </div>
-</template>
+@Component({
+  template: '
+  <template>
+    <div id="app">
+      <LeftColumn />
+      <ContentBox />
+    </div>
+  </template>'
+})
+
 
 <script>
 import LeftColumn from "./components/LeftColumn.vue";
