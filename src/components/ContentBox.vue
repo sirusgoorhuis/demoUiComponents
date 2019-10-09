@@ -65,8 +65,11 @@ export default {
             window.removeEventListener('scroll', this.scrollBar);
         }
     },
-    data: {
+    data: function(){
+        return {
 
+
+        };
     }
 }
 </script>
