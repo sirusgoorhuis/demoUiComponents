@@ -6,17 +6,41 @@
       <img class="logo" src="../assets/logo.svg" />
       <input v-model="search" class="searchbar" placeholder="Search" type="text" />
     </div>
-    <ul class="categories" v-for="child in root.children" :key="child.name">
-      {{child.name}}
+
+    <ul v-bind:class="filteredStarted < 1 ? 'hidden' : 'categories'">
+      Getting Started
       <li
         v-bind:class="index === indexElement ? 'active' : ''"
         @click="setActive(indexElement)"
         class="item"
-        v-for="(element, indexElement) in child.children"
+        v-for="(element, indexElement) in filteredStarted"
         :key="element.id"
       >{{element.title}}</li>
     </ul>
 
+    <ul v-bind:class="filteredComponents < 1 ? 'hidden' : 'categories'">
+      Components
+      <li
+        v-bind:class="index === indexElement ? 'active' : ''"
+        @click="setActive(indexElement)"
+        class="item"
+        v-for="(element, indexElement) in filteredComponents"
+        :key="element.id"
+      >{{element.title}}</li>
+    </ul>
+
+    <!--
+      <ul class="secondIndent">
+        <transition-group name="list" enter-active-class="animated fadeInLeft">
+          <li
+            class="componentItem"
+            v-bind:class="index === indexComponent ? 'active' : ''"
+            @click="setActive(indexComponent)"
+            v-for="(component, indexComponent) in filteredComponents"
+            :key="component.id"
+          >{{component.title}}</li>
+        </transition-group>
+    </ul>-->
   </div>
 </template>'
 })
@@ -30,72 +54,64 @@ export default {
 
   data: function() {
     return {
-      root: {
-        name: "treeview",
-        children: [
-          {
-            name: "Getting Started",
-            children: [
-              { id: 28, title: "About OpenRemote" },
-              { id: 29, title: "Introduction" },
-              { id: 30, title: "Installation" }
-            ]
-          },
-          {
-            name: "Components",
-            children: [
-              { id: 1, title: "Asset tree" },
-              { id: 2, title: "Asset Viewer" },
-              { id: 3, title: "Attribute input" },
-              { id: 4, title: "Header" },
-              { id: 5, title: "Icon" },
-              { id: 6, title: "Input" },
-              { id: 7, title: "Map" },
-              { id: 8, title: "Rules editor" },
-              { id: 9, title: "Select" },
-              { id: 10, title: "Smart notify" },
-              { id: 11, title: "Thermostat" },
-              { id: 12, title: "Timeline" },
-              { id: 13, title: "Translat" },
-              { id: 14, title: "Rest" },
-              { id: 15, title: "Asset tree" },
-              { id: 16, title: "Asset Viewer" },
-              { id: 17, title: "Attribute input" },
-              { id: 18, title: "Header" },
-              { id: 19, title: "Icon" },
-              { id: 20, title: "Input" },
-              { id: 21, title: "Map" },
-              { id: 22, title: "Rules editor" },
-              { id: 23, title: "Select" },
-              { id: 24, title: "Smart notify" },
-              { id: 25, title: "Thermostat" },
-              { id: 26, title: "Timeline" },
-              { id: 27, title: "Translat" }
-            ]
-          }
-        ]
-      },
+      gettingStarted: [
+        { id: 28, title: "About OpenRemote" },
+        { id: 29, title: "Introduction" },
+        { id: 30, title: "Installation" }
+      ],
+      components: [
+        { id: 1, title: "Asset tree" },
+        { id: 2, title: "Asset Viewer" },
+        { id: 3, title: "Attribute input" },
+        { id: 4, title: "Header" },
+        { id: 5, title: "Icon" },
+        { id: 6, title: "Input" },
+        { id: 7, title: "Map" },
+        { id: 8, title: "Rules editor" },
+        { id: 9, title: "Select" },
+        { id: 10, title: "Smart notify" },
+        { id: 11, title: "Thermostat" },
+        { id: 12, title: "Timeline" },
+        { id: 13, title: "Translat" },
+        { id: 14, title: "Rest" },
+        { id: 15, title: "Asset tree" },
+        { id: 16, title: "Asset Viewer" },
+        { id: 17, title: "Attribute input" },
+        { id: 18, title: "Header" },
+        { id: 19, title: "Icon" },
+        { id: 20, title: "Input" },
+        { id: 21, title: "Map" },
+        { id: 22, title: "Rules editor" },
+        { id: 23, title: "Select" },
+        { id: 24, title: "Smart notify" },
+        { id: 25, title: "Thermostat" },
+        { id: 26, title: "Timeline" },
+        { id: 27, title: "Translat" }
+      ],
 
       index: 0,
-      search: "",
+      search: ""
     };
   },
 
-  /*
-   computed: {
-    filteredElements: function() {
-      return this.results.filter(element => {
-        return element.match(this.search);
+  computed: {
+    filteredStarted: function() {
+      return this.gettingStarted.filter(element => {
+        return element.title.match(this.search);
+      });
+    },
+
+    filteredComponents: function() {
+      return this.components.filter(element => {
+        return element.title.match(this.search);
       });
     }
   },
 
-  */
-
   methods: {
     setActive(index) {
       this.index = index;
-    },
+    }
   }
 };
 </script>
@@ -123,13 +139,19 @@ export default {
 
 .categories {
   list-style-type: none;
-  margin-left: 0;
+  margin-left: -1vw;
   z-index: 1;
   color: white;
   font-size: 2vw;
   font-family: HelveticaNeue-Bold;
   margin-top: 30vh;
   margin-bottom: -24vh;
+  text-align: left;
+
+}
+
+.hidden{
+  display: none;
 }
 
 .categories > :first-child {
@@ -148,6 +170,7 @@ export default {
   color: white;
   padding-left: 20px;
   margin-bottom: 1.5vh;
+  margin-left: 2vw;
   font-size: 1.2vw;
   cursor: pointer;
 }
