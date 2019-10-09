@@ -97,13 +97,13 @@ export default {
   computed: {
     filteredStarted: function() {
       return this.gettingStarted.filter(element => {
-        return element.title.match(this.search);
+        return element.title.toLowerCase().match(this.search);
       });
     },
 
     filteredComponents: function() {
       return this.components.filter(element => {
-        return element.title.match(this.search);
+        return element.title.toLowerCase().match(this.search);
       });
     }
   },
