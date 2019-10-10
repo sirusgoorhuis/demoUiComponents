@@ -1,4 +1,197 @@
 {
-    "mode": "file",
-    "out": "docs"
+	"id": 0,
+	"name": "demouicomponents",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/index.ts",
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "\"main\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/main.ts",
+			"sources": [
+				{
+					"fileName": "main.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "\"router\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/router.ts",
+			"sources": [
+				{
+					"fileName": "router.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "\"typescript/test1\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/typescript/test1.ts",
+			"sources": [
+				{
+					"fileName": "typescript/test1.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 5,
+			"name": "\"typescript/test2\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/typescript/test2.ts",
+			"children": [
+				{
+					"id": 6,
+					"name": "minify",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 7,
+							"name": "minify",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Responsible of minify given string containing JavaScript code. By default it uses the foo-bar minimization algorithm.",
+								"text": "**Warning: if you don't specify an output in the configuration your input file will be overridden !**\n\nBasic usage example:\n\n```ts\nimport {minify} from 'foobar-minify';\nconst config = {\n  input: readFileSync('dist/awesome-app.js'),\n  output: createWriteStream('dist/awesome-app.min.js')\n}\n  minify(config);\n```\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "typescript/test2.ts",
+							"line": 17,
+							"character": 15
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						6
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "typescript/test2.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 8,
+			"name": "\"typescript/test3\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/typescript/test3.ts",
+			"children": [
+				{
+					"id": 9,
+					"name": "MyClass",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Codeblocks are great for examples",
+						"text": "```\n<my-custom-element>Highlight JS will autodetect the language</my-custom-element>\n```\n\n```typescript\n// Or you can specify the language explicitly\nconst instance = new MyClass();\n```\n"
+					},
+					"sources": [
+						{
+							"fileName": "typescript/test3.ts",
+							"line": 13,
+							"character": 20
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						9
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "typescript/test3.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1,
+				3,
+				2,
+				4,
+				5,
+				8
+			]
+		}
+	]
 }
