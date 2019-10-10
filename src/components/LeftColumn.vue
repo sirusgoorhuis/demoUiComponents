@@ -1,27 +1,51 @@
 @Component({
   template: '
   <template>
-    <div class="leftColumn">
-      <div class="wrapper">
-        <img class="logo" src="../assets/logo.svg" />
-        <input class="searchbar" placeholder="Search" type="text" />
-      </div>
-    <ul>
-      <transition-group name="list" enter-active-class="animated fadeInLeft">
-        <li
-          v-bind:class="index === indexComponent ? 'active' : ''"
-          @click="setActive(indexComponent)"
-          v-for="(component, indexComponent) in filteredComponents"
-          :key="component.id"
-        >{{component.title}}</li>
-      </transition-group>
+  <div class="leftColumn">
+    <div class="wrapper">
+      <img class="logo" src="../assets/logo.svg" />
+      <input v-model="search" class="searchbar" placeholder="Search" type="text" />
+    </div>
+
+    <ul v-bind:class="filteredStarted < 1 ? 'hidden' : 'categories'">
+      Getting Started
+      <li
+        v-bind:class="index === indexElement ? 'active' : ''"
+        @click="setActive(indexElement)"
+        class="item"
+        v-for="(element, indexElement) in filteredStarted"
+        :key="element.id"
+      >{{element.title}}</li>
     </ul>
+
+    <ul v-bind:class="filteredComponents < 1 ? 'hidden' : 'categories'">
+      Components
+      <li
+        v-bind:class="index === indexElement ? 'active' : ''"
+        @click="setActive(indexElement)"
+        class="item"
+        v-for="(element, indexElement) in filteredComponents"
+        :key="element.id"
+      >{{element.title}}</li>
+    </ul>
+
+    <!--
+      <ul class="secondIndent">
+        <transition-group name="list" enter-active-class="animated fadeInLeft">
+          <li
+            class="componentItem"
+            v-bind:class="index === indexComponent ? 'active' : ''"
+            @click="setActive(indexComponent)"
+            v-for="(component, indexComponent) in filteredComponents"
+            :key="component.id"
+          >{{component.title}}</li>
+        </transition-group>
+    </ul>-->
   </div>
 </template>'
 })
 
 <script>
-
 export default {
   name: "LeftColumn",
   props: {
@@ -30,6 +54,11 @@ export default {
 
   data: function() {
     return {
+      gettingStarted: [
+        { id: 28, title: "About OpenRemote" },
+        { id: 29, title: "Introduction" },
+        { id: 30, title: "Installation" }
+      ],
       components: [
         { id: 1, title: "Asset tree" },
         { id: 2, title: "Asset Viewer" },
@@ -57,27 +86,26 @@ export default {
         { id: 24, title: "Smart notify" },
         { id: 25, title: "Thermostat" },
         { id: 26, title: "Timeline" },
-        { id: 27, title: "Translat" },
-        { id: 28, title: "Rest" }
+        { id: 27, title: "Translat" }
       ],
 
       index: 0,
-      search: ''
-
-     
+      search: ""
     };
   },
 
   computed: {
+    filteredStarted: function() {
+      return this.gettingStarted.filter(element => {
+        return element.title.toLowerCase().match(this.search);
+      });
+    },
 
-    filteredComponents: function(){
-      return this.components.filter((component) => {
-
-          return component.title.match(this.search);
-
-      }) 
+    filteredComponents: function() {
+      return this.components.filter(element => {
+        return element.title.toLowerCase().match(this.search);
+      });
     }
-
   },
 
   methods: {
@@ -92,9 +120,7 @@ export default {
 <style scoped>
 @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
 
-
-::-webkit-scrollbar{
-
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -108,24 +134,43 @@ export default {
   z-index: 10;
   overflow-y: scroll;
   overflow-x: hidden;
-
+  position: relative;
 }
 
-ul {
+.categories {
   list-style-type: none;
-  margin-left: 0;
-  margin-top: 30vh;
+  margin-left: -1vw;
   z-index: 1;
+  color: white;
+  font-size: 2vw;
+  font-family: HelveticaNeue-Bold;
+  margin-top: 30vh;
+  margin-bottom: -24vh;
+  text-align: left;
+
 }
 
-li {
-  background-color: #1c1c1c;
+.hidden{
+  display: none;
+}
+
+.categories > :first-child {
+  margin-top: 3vh;
+}
+
+.categories > :last-child {
+  margin-bottom: 4vh;
+}
+
+.item {
+  background-color: transparent;
   border-left-style: solid;
   border-left-color: #519c36;
 
   color: white;
   padding-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 1.5vh;
+  margin-left: 2vw;
   font-size: 1.2vw;
   cursor: pointer;
 }
