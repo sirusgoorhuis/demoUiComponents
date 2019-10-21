@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;typescript/test2&quot; | demouicomponents</title>
+	<title>Example | demouicomponents</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,58 +56,93 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_typescript_test2_.html">&quot;typescript/test2&quot;</a>
+					<a href="../modules/_typescript_test1_.html">&quot;typescript/test1&quot;</a>
+				</li>
+				<li>
+					<a href="_typescript_test1_.example.html">Example</a>
 				</li>
 			</ul>
-			<h1>External module &quot;typescript/test2&quot;</h1>
+			<h1>Class Example</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>TypeDocのExampleです。</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Example</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Functions</h3>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_typescript_test2_.html#minify" class="tsd-kind-icon">minify</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_typescript_test1_.example.html#message" class="tsd-kind-icon">message</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_typescript_test1_.example.html#saymessage" class="tsd-kind-icon">say<wbr>Message</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="minify" class="tsd-anchor"></a>
-					<h3>minify</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">minify<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Hello&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sirusgoorhuis/demouicomponents/blob/65cc171/src/typescript/test1.ts#L6">typescript/test1.ts:6</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>プロパティです。</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="saymessage" class="tsd-anchor"></a>
+					<h3>say<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">say<wbr>Message<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sirusgoorhuis/demouicomponents/blob/65cc171/src/typescript/test2.ts#L17">typescript/test2.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/sirusgoorhuis/demouicomponents/blob/65cc171/src/typescript/test1.ts#L12">typescript/test1.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Responsible of minify given string containing JavaScript code. By default it uses the foo-bar minimization algorithm.</p>
+									<p>メソッドです。</p>
 								</div>
-								<p><strong>Warning: if you don&#39;t specify an output in the configuration your input file will be overridden !</strong></p>
-								<p>Basic usage example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">import</span> {minify} <span class="hljs-keyword">from</span> <span class="hljs-string">'foobar-minify'</span>;
-<span class="hljs-keyword">const</span> config = {
-  input: readFileSync(<span class="hljs-string">'dist/awesome-app.js'</span>),
-  output: createWriteStream(<span class="hljs-string">'dist/awesome-app.min.js'</span>)
-}
-  minify(config);</code></pre>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>メッセージ</p>
 						</li>
 					</ul>
 				</section>
@@ -120,30 +155,42 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+						<a href="../modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_main_.html">"main"</a>
+						<a href="../modules/_main_.html">"main"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_router_.html">"router"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_typescript_test1_.html">"typescript/test1"</a>
+						<a href="../modules/_router_.html">"router"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_typescript_test2_.html">"typescript/test2"</a>
+						<a href="../modules/_typescript_test1_.html">"typescript/test1"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_typescript_test3_.html">"typescript/test3"</a>
+						<a href="../modules/_typescript_test2_.html">"typescript/test2"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_typescript_test3_.html">"typescript/test3"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_typescript_test2_.html#minify" class="tsd-kind-icon">minify</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_typescript_test1_.example.html" class="tsd-kind-icon">Example</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_typescript_test1_.example.html#message" class="tsd-kind-icon">message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_typescript_test1_.example.html#saymessage" class="tsd-kind-icon">say<wbr>Message</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

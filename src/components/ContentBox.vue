@@ -67,7 +67,18 @@ export default {
     },
     data: function(){
         return {
-
+            title: [
+                {id: 1, text: "@openremote/or-asset-tree"}
+            ],
+            information: [
+                {id: 1, text: "Web Component for displaying an asset tree. This component requires an OpenRemote Manager to retrieve, save and query assets."}
+            ],
+            subtitle: [
+                {id: 1, text: "Install"}
+            ],
+            code: [
+                {id: 1, text: ""}
+            ]
 
         };
     }

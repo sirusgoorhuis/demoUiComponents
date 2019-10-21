@@ -64,6 +64,113 @@
 				"isExported": true
 			},
 			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/typescript/test1.ts",
+			"children": [
+				{
+					"id": 5,
+					"name": "Example",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "TypeDocのExampleです。"
+					},
+					"children": [
+						{
+							"id": 6,
+							"name": "message",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "プロパティです。"
+							},
+							"sources": [
+								{
+									"fileName": "typescript/test1.ts",
+									"line": 6,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Hello\""
+						},
+						{
+							"id": 7,
+							"name": "sayMessage",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 8,
+									"name": "sayMessage",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "メソッドです。",
+										"returns": "メッセージ\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "typescript/test1.ts",
+									"line": 12,
+									"character": 21
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								6
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								7
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "typescript/test1.ts",
+							"line": 4,
+							"character": 28
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						5
+					]
+				}
+			],
 			"sources": [
 				{
 					"fileName": "typescript/test1.ts",
@@ -73,7 +180,7 @@
 			]
 		},
 		{
-			"id": 5,
+			"id": 9,
 			"name": "\"typescript/test2\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -83,14 +190,14 @@
 			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/typescript/test2.ts",
 			"children": [
 				{
-					"id": 6,
+					"id": 10,
 					"name": "minify",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 7,
+							"id": 11,
 							"name": "minify",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -119,7 +226,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						6
+						10
 					]
 				}
 			],
@@ -132,7 +239,7 @@
 			]
 		},
 		{
-			"id": 8,
+			"id": 12,
 			"name": "\"typescript/test3\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -142,7 +249,7 @@
 			"originalName": "/Users/sirus.goorhuis/Documents/S7/OI7/demouicomponents/src/typescript/test3.ts",
 			"children": [
 				{
-					"id": 9,
+					"id": 13,
 					"name": "MyClass",
 					"kind": 128,
 					"kindString": "Class",
@@ -167,7 +274,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						9
+						13
 					]
 				}
 			],
@@ -189,8 +296,8 @@
 				3,
 				2,
 				4,
-				5,
-				8
+				9,
+				12
 			]
 		}
 	]

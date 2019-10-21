@@ -36,7 +36,10 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/**/*/.index.ts",
+    "src/**/*/.main.ts",
+    "src/**/*/.router.ts"
   ],
   "typedocOptions": {
     "mode": "modules",
