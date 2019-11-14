@@ -7,6 +7,9 @@
       <input v-model="search" class="searchbar" placeholder="Search" type="text" />
     </div>
 
+
+<!-- listview for the getting started components. Also only shows the filtered components 
+      when the user searches in the searchfield -->
     <ul v-bind:class="filteredStarted < 1 ? 'hidden' : 'categories'">
       Getting Started
       <li
@@ -17,6 +20,10 @@
         :key="element.id"
       >{{element.title}}</li>
     </ul>
+
+
+<!-- listview for the UIcomponents. Also only shows the filtered components 
+      when the user searches in the searchfield -->
 
     <ul v-bind:class="filteredComponents < 1 ? 'hidden' : 'categories'">
       Components
@@ -52,13 +59,19 @@ export default {
     msg: String
   },
 
+
+//The data function for the leftcolumn component. This function stores all the components id and title
   data: function() {
     return {
+
+      //Array for the gettingstarted components
       gettingStarted: [
         { id: 28, title: "About OpenRemote" },
         { id: 29, title: "Introduction" },
         { id: 30, title: "Installation" }
       ],
+
+      //Arrar for the UIcomponents
       components: [
         { id: 1, title: "Asset tree" },
         { id: 2, title: "Asset Viewer" },
@@ -89,18 +102,27 @@ export default {
         { id: 27, title: "Translat" }
       ],
 
+
+
       index: 0,
       search: ""
     };
   },
 
+
+//Computed function which stores variables that are computed in the document
   computed: {
+
+    //filteredStarted is a function that compute the variable element. This function is called when the 
+    //user is typing in the searchbar. The variable element.title is used to display in the listview
     filteredStarted: function() {
       return this.gettingStarted.filter(element => {
         return element.title.toLowerCase().match(this.search);
       });
     },
 
+    //filteredComponents is a function that compute the variable element. This function is called when the 
+    //user is typing in the searchbar. The variable element.title is used to display in the listview
     filteredComponents: function() {
       return this.components.filter(element => {
         return element.title.toLowerCase().match(this.search);
@@ -108,6 +130,8 @@ export default {
     }
   },
 
+
+//A method that is called when the user clicks on a specific component in the listview. The component sets its class to active.
   methods: {
     setActive(index) {
       this.index = index;
